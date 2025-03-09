@@ -1,0 +1,83 @@
+{
+	"info": {
+		"_postman_id": "0e1a81bd-4e22-4898-9168-d05cbeed21c9",
+		"name": "Spring Boot with Redis in Action",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "27659715"
+	},
+	"item": [
+		{
+			"name": "get_by_id",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{host}}/items/f4ee7d25-851c-4053-841e-991dfa22e6d5",
+					"host": [
+						"{{host}}"
+					],
+					"path": [
+						"items",
+						"f4ee7d25-851c-4053-841e-991dfa22e6d5"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "save_item",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"content\": \"Some test 1\"\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{host}}/items",
+					"host": [
+						"{{host}}"
+					],
+					"path": [
+						"items"
+					]
+				}
+			},
+			"response": []
+		}
+	],
+	"event": [
+		{
+			"listen": "prerequest",
+			"script": {
+				"type": "text/javascript",
+				"packages": {},
+				"exec": [
+					""
+				]
+			}
+		},
+		{
+			"listen": "test",
+			"script": {
+				"type": "text/javascript",
+				"packages": {},
+				"exec": [
+					""
+				]
+			}
+		}
+	],
+	"variable": [
+		{
+			"key": "host",
+			"value": "http://localhost:8080",
+			"type": "string"
+		}
+	]
+}
