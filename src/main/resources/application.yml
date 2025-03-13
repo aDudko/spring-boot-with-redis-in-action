@@ -1,19 +1,31 @@
+server:
+    port: 8080
+
+logging:
+    level:
+        root: INFO
+
 spring:
     application:
         name: spring-boot-with-redis-in-action
-    # Postgres Configuration
-    datasource:
-        driver-class-name: org.postgresql.Driver
-        url: jdbc:postgresql://localhost:5432/pg
-        username: postgres
-        password: postgres
-    # JPA Configuration
-    jpa:
-        hibernate:
-            ddl-auto: update
-        show-sql: true
-    # Redis Configuration
     data:
         redis:
             host: localhost
             port: 6379
+
+management:
+    server:
+        port: 8282
+    endpoints:
+        web:
+            base-path: /mng
+            exposure:
+                include: '*'
+    endpoint:
+        health:
+            show-details: always
+
+redis:
+    keys:
+        item:
+            timeToLive: PT10M

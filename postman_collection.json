@@ -12,13 +12,13 @@
 				"method": "GET",
 				"header": [],
 				"url": {
-					"raw": "{{host}}/items/f4ee7d25-851c-4053-841e-991dfa22e6d5",
+					"raw": "{{host}}/items/4490b6af-fd7d-4e70-b9bd-3ca672d39610",
 					"host": [
 						"{{host}}"
 					],
 					"path": [
 						"items",
-						"f4ee7d25-851c-4053-841e-991dfa22e6d5"
+						"4490b6af-fd7d-4e70-b9bd-3ca672d39610"
 					]
 				}
 			},
@@ -31,7 +31,7 @@
 				"header": [],
 				"body": {
 					"mode": "raw",
-					"raw": "{\n    \"content\": \"Some test 1\"\n}",
+					"raw": "{\n    \"id\": \"4490b6af-fd7d-4e70-b9bd-3ca672d39610\",\n    \"contentDto\": {\n        \"content\": \"Some test 1\"\n    },\n    \"secretDetails\": \"first_field:second_field\"\n}",
 					"options": {
 						"raw": {
 							"language": "json"

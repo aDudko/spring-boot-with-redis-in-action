@@ -1,6 +1,6 @@
 package com.dudko.example.service;
 
-import com.dudko.example.domain.entity.Item;
+import com.dudko.example.model.Item;
 
 public interface ItemService {
 
