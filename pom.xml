@@ -19,7 +19,7 @@
 
     <groupId>com.dudko.example</groupId>
     <artifactId>spring-boot-with-redis-in-action</artifactId>
-    <version>0.0.2</version>
+    <version>3.4.3</version>
     <description>Example of object caching in Redis for Spring Boot applications</description>
 
     <properties>
@@ -46,12 +46,6 @@
         <dependency>
             <groupId>org.springframework.boot</groupId>
             <artifactId>spring-boot-starter-actuator</artifactId>
-        </dependency>
-
-        <dependency>
-            <groupId>org.aspectj</groupId>
-            <artifactId>aspectjweaver</artifactId>
-            <version>${aspectj.version}</version>
         </dependency>
 
         <dependency>

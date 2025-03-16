@@ -8,9 +8,9 @@ services:
         container_name: redis-master
         ports:
             - "6379:6379"
-        networks:
-            - demo
         command: [ "redis-server", "--appendonly", "yes" ]
+        networks:
+            - ${GLOBAL_NETWORK:-service}
 
     redis-slave:
         image: redis:alpine
@@ -20,22 +20,23 @@ services:
         depends_on:
             - redis-master
         networks:
-            - demo
+            - ${GLOBAL_NETWORK:-service}
         command: [ "redis-server", "--slaveof", "redis-master", "6379" ]
 
-    demo-service:
-        image: anatolydudko/spring-boot-with-redis-in-action:0.0.2
-        hostname: demo-service
-        container_name: demo-service
+    spring-boot-redis:
+        image: anatolydudko/spring-boot-with-redis-in-action:3.4.3
+        hostname: spring-boot-redis
+        container_name: spring-boot-redis
         ports:
             - "8080:8080"
         environment:
             - "SPRING_DATA_REDIS_HOST=redis-master"
         depends_on:
-            - redis-master
+            redis-master:
+                condition: service_started
         networks:
-            - demo
+            - ${GLOBAL_NETWORK:-service}
 
 networks:
-    demo:
+    service:
         driver: bridge
